@@ -1,4 +1,4 @@
-name: llmodel
+name: local-ai
 recipe: drupal11
 config:
   webroot: web

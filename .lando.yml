@@ -25,6 +25,8 @@ services:
       - apt-get update -y
       - yes '' | pecl install mongodb
       - docker-php-ext-enable mongodb
+    run_as_root:
+      - echo "extension=mongodb.so" >> $PHP_INI_DIR/php.ini-production
 tooling:
   mongosh:
     service: vectordb

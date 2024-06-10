@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0187621d944c359e66fa40d8c858d5f6",
+    "content-hash": "3c55eac292f78d25b7428a40ebcd4a58",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3649,12 +3649,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/emulsify-ds/emulsify-drupal.git",
-                "reference": "e3b6c52976f7511257acdcdaab9c5a7c0200b01c"
+                "reference": "43265520e0a90925eb1bcfe9f3944f5f097e887c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/emulsify-ds/emulsify-drupal/zipball/e3b6c52976f7511257acdcdaab9c5a7c0200b01c",
-                "reference": "e3b6c52976f7511257acdcdaab9c5a7c0200b01c",
+                "url": "https://api.github.com/repos/emulsify-ds/emulsify-drupal/zipball/43265520e0a90925eb1bcfe9f3944f5f097e887c",
+                "reference": "43265520e0a90925eb1bcfe9f3944f5f097e887c",
                 "shasum": ""
             },
             "require": {
@@ -3662,6 +3662,7 @@
                 "drupal/core": "^10 || ^11",
                 "drupal/emulsify_tools": "^1.0.x-dev@dev"
             },
+            "default-branch": true,
             "type": "drupal-theme",
             "extra": {
                 "drush": {
@@ -3698,10 +3699,10 @@
             "description": "The official Drupal 10 base theme for Emulsify that generates custom themes with Storybook development + Webpack Build",
             "homepage": "http://emulsify.info",
             "support": {
-                "source": "https://github.com/emulsify-ds/emulsify-drupal/tree/main",
+                "source": "https://github.com/emulsify-ds/emulsify-drupal/tree/5.0.1",
                 "issues": "https://github.com/emulsify-ds/emulsify-drupal/issues"
             },
-            "time": "2024-04-25T17:15:30+00:00"
+            "time": "2024-06-10T13:53:24+00:00"
         },
         {
             "name": "emulsify-ds/emulsify_tools",
@@ -3709,12 +3710,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/emulsify-ds/emulsify_tools.git",
-                "reference": "28d42db36bd13532ba1e3c2f96d9cc8667339c4c"
+                "reference": "92b5643f501089942a937c2189a88d28b34bbaad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/emulsify-ds/emulsify_tools/zipball/28d42db36bd13532ba1e3c2f96d9cc8667339c4c",
-                "reference": "28d42db36bd13532ba1e3c2f96d9cc8667339c4c",
+                "url": "https://api.github.com/repos/emulsify-ds/emulsify_tools/zipball/92b5643f501089942a937c2189a88d28b34bbaad",
+                "reference": "92b5643f501089942a937c2189a88d28b34bbaad",
                 "shasum": ""
             },
             "default-branch": true,
@@ -3725,10 +3726,10 @@
             "description": "Provides Twig functions and subtheme generation for use with Emulsify",
             "homepage": "http://emulsify.info",
             "support": {
-                "source": "https://github.com/emulsify-ds/emulsify_tools/tree/main",
+                "source": "https://github.com/emulsify-ds/emulsify_tools/tree/1.0.1",
                 "issues": "https://github.com/emulsify-ds/emulsify_tools/issues"
             },
-            "time": "2024-02-28T20:45:09+00:00"
+            "time": "2024-06-07T18:10:42+00:00"
         },
         {
             "name": "ewcomposer/unpack",
@@ -5660,16 +5661,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.12.3",
+            "version": "v0.12.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "b6b6cce7d3ee8fbf31843edce5e8f5a72eff4a73"
+                "reference": "2fd717afa05341b4f8152547f142cd2f130f6818"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/b6b6cce7d3ee8fbf31843edce5e8f5a72eff4a73",
-                "reference": "b6b6cce7d3ee8fbf31843edce5e8f5a72eff4a73",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/2fd717afa05341b4f8152547f142cd2f130f6818",
+                "reference": "2fd717afa05341b4f8152547f142cd2f130f6818",
                 "shasum": ""
             },
             "require": {
@@ -5733,9 +5734,9 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
-                "source": "https://github.com/bobthecow/psysh/tree/v0.12.3"
+                "source": "https://github.com/bobthecow/psysh/tree/v0.12.4"
             },
-            "time": "2024-04-02T15:57:53+00:00"
+            "time": "2024-06-10T01:18:23+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -8684,5 +8685,9 @@
         "php": ">=8.3"
     },
     "platform-dev": [],
+    "platform-overrides": {
+        "ext-mongodb": "1.19.2",
+        "php": "8.3.6"
+    },
     "plugin-api-version": "2.3.0"
 }

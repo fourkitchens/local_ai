@@ -11,19 +11,29 @@ services:
     type: lando
     api: 3
     meUser: root
-    port: 27017
+    portforward: true
+    moreHttpPorts:
+      - 27017
+      - 27018
+    internal_connection:
+      host: 'vectordb'
+      port: 27017
     services:
       user: root
-      image: mongodb/atlas
-      command: mongodb/atlas
+      image: mongodb/mongodb-atlas-local:latest
+      command: 'docker-entrypoint.sh mongod'
       privileged: true
       volumes:
         - data:/data/db
       ports:
-        - 27017:27017
-    healthcheck: false
+        - 27018:27017
+    healthcheck: "atlas"
+    build_as_root:
+      - yum install -y mongodb-mongosh
+      - yum install -y mongodb-atlas
     run:
       - atlas deployments setup dropai --type local --force
+      - mongosh --eval "use default"
   appserver:
     build_as_root:
       - apt-get update -y

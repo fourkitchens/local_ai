@@ -12,35 +12,45 @@ services:
     api: 3
     meUser: root
     portforward: true
-    moreHttpPorts:
+    ports:
       - 27017
-      - 27018
-    internal_connection:
-      host: 'vectordb'
-      port: 27017
+    networks:
+      localai:
     services:
       user: root
       image: mongodb/mongodb-atlas-local:latest
-      command: 'docker-entrypoint.sh mongod'
+      command: 'entrypoint.sh start_atlas'
+      entrypoint: ["entrypoint.sh"]
       privileged: true
+      environment:
+        LANDO_WEBROOT_USER: root
+        LANDO_WEBROOT_GROUP: root
+        LANDO_DROP_USER: root
+        LANDO_NEEDS_EXEC: 'DOEEET'
+        LOCALDEV_PASSWORD: psswd
+      ports:
+        - 27017:27017
       volumes:
         - data:/data/db
-      ports:
-        - 27018:27017
-    healthcheck: "atlas"
+        - ./entrypoint.sh:/entrypoint.sh
+    healthcheck: false
     build_as_root:
       - yum install -y mongodb-mongosh
       - yum install -y mongodb-atlas
     run:
-      - atlas deployments setup dropai --type local --force
-      - mongosh --eval "use default"
+      - atlas deployments setup dropai --bindIpAll --username root --password $LOCALDEV_PASSWORD --type local --port 27017 --force
+      - mongosh --eval "use documents"
   appserver:
+    networks:
+      localai:
     build_as_root:
       - apt-get update -y
       - yes '' | pecl install mongodb
       - docker-php-ext-enable mongodb
     run_as_root:
       - echo "extension=mongodb.so" >> $PHP_INI_DIR/php.ini-production
+networks:
+  localai:
 tooling:
   mongosh:
     service: vectordb

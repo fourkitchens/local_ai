@@ -906,7 +906,7 @@ $databases['default']['default'] = array (
 $settings['mongodb'] = [
   'clients' => [
     'default' => [
-      'uri' => 'mongodb://localhost:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.6',
+      'uri' => 'mongodb://root:psswd@vectordb:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.6',
       'uriOptions' => [],
       'driverOptions' => [],
     ],
